@@ -69,3 +69,20 @@ body {
 #update_product {
   display: none;
 }
+
+#delete {
+  border: 1px solid #ff5733;
+  height: 50px;
+  width: 300px;
+  padding: 20px;
+  margin: 20px 0px;
+  display: none;
+}
+#delete h1 {
+  font-size: small;
+}
+#delete input {
+  background-color: #ff5733;
+  color: white;
+  border: none;
+}

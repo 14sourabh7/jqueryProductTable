@@ -83,7 +83,6 @@ $(document).ready(function () {
         $("#product_sku").attr("disabled", "disabled");
     }
 
-
     // function to update products
     $("#update_product").click(function () {
         var sku = $("#product_sku").val();
@@ -108,12 +107,18 @@ $(document).ready(function () {
     });
     // function to delete elements
     function deleteProduct(id) {
-        var index = arrProducts.findIndex((x) => x.sku == id);
-        arrProducts.splice(index, 1);
-        display(arrProducts);
-        successMessage("Product deleted Successfully");
+        $("#delete").show();
+        $("#btnDelete").click(function () {
+            var index = arrProducts.findIndex((x) => x.sku == id);
+            arrProducts.splice(index, 1);
+            display(arrProducts);
+            successMessage("Product deleted Successfully");
+            $("#delete").hide();
+        });
+        $("#btnCancel").click(function () {
+            $("#delete").hide();
+        });
     }
-
 
     // function checking empty input fields
     function checkEmpty(sku, name, price, quantity) {
@@ -199,8 +204,6 @@ $(document).ready(function () {
         });
     }
 
-
-
     // function to clear input
     function clearInput() {
         $("#product_sku").val("");
@@ -208,6 +211,4 @@ $(document).ready(function () {
         $("#product_price").val("");
         $("#product_quantity").val("");
     }
-
-
 });
