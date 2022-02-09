@@ -120,7 +120,7 @@ $(document).ready(function () {
     var index = arrProducts.findIndex((x) => x.sku == did);
     arrProducts.splice(index, 1);
     display(arrProducts);
-    successMessage("Product id:" + did + "deleted Successfully");
+    successMessage("Product id: " + did + " deleted Successfully");
     $("#delete").hide();
   });
   // function checking empty input fields
